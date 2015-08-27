@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>味爱回家-年年有鱼</title>
+		<link rel="stylesheet" type="text/css" href="jly.css" />
+		<meta name="apple-touch-fullscreen" content="YES" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta http-equiv="Expires" content="0" />
+		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<script src="theviemport.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var ua = window.navigator.userAgent;
+			var re = /(Android|iPod|iTouch|iPhone|iPad|BlackBerry|SymbianOS|SymbOS|Windows Phone OS|WAP|Kindle|pad|pod)/i;
+			var fsize = (window.devicePixelRatio >= 2) ? '1.6rem' : '1.4rem'
+			if (re.test(ua)) {
+				document.write('<style>html{font-size:' + fsize + '}</style>');
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="jly_wrap">
+			<!-- loading -->
+			<div id="loadingwrap">
+				<img src="images/loading.gif" />
+			</div>
+			<!-- loading end -->
+			<div id="page1" class="maincnt">
+				<div>
+					<img src="images/hands.gif" alt="" /> 左右滑动开启页面</div>
+			</div>
+
+			<div id="page2" class="maincnt">
+				<img src="images/dlong.png" id="dlong" alt="" />
+				<img src="images/yh.gif" alt="" id="yhua" />
+				<ul id="page2_snav">
+					<li onclick="page2_detail(1)"></li>
+					<li onclick="page2_detail(2 )"></li>
+				</ul>
+				<div class="page_d" id="page2_d1">
+					<h2><a href="javascript:;" onclick="page2_detail(0,1)"></a></h2>
+					<div class="pd_cnt">
+						<img src="images/page2_d1.jpg" alt="" />
+						<img src="images/dasj.png" alt="" />
+
+					</div>
+				</div>
+				<div class="page_d" id="page2_d2">
+					<h2><a href="javascript:;" onclick="page2_detail(0,1)"></a></h2>
+					<div class="pd_cnt">
+						<img src="images/page2_d2.jpg" />
+						<img src="images/page2_d3.png" />
+					</div>
+				</div>
+
+				<div class="page_btn"><span onclick="spage('card_wrap')">制作贺卡</span>
+				</div>
+			</div>
+
+			<div id="card_wrap" class="maincnt">
+				<div id="canvas">
+					<div id="cut_wrap">
+						<img src="" alt="" id="cut_img" />
+						<div id="cut_cover"></div>
+					</div>
+					<p><a href="javascript:;" onclick="cutok()">确定</a>　<a href="javascript:;" onclick="cutexit()">取消</a>
+					</p>
+				</div>
+				<ul class="topic select_topic">
+					<li class="abm_none gmum" data-imglink=''>
+						<div class="cur_wrap"></div>
+						<i></i>
+						<input type="file" capture="camera" onchange="upalbumal(this)" name="gmum" accept="image/*" multiple="multiple" />
+					</li>
+					<li class="abm_none mum" data-imglink=''>
+						<div class="cur_wrap"></div><i></i>
+						<input type="file" capture="camera" onchange="upalbumal(this)" name="mum" accept="image/*" multiple="multiple" />
+					</li>
+					<li class="abm_none gfath" data-imglink=''>
+						<div class="cur_wrap"></div><i></i>
+						<input type="file" capture="camera" onchange="upalbumal(this)" name="gfath" accept="image/*" multiple="multiple" />
+					</li>
+					<li class="abm_none fath" data-imglink=''>
+						<div class="cur_wrap"></div><i></i>
+						<input type="file" capture="camera" onchange="upalbumal(this)" name="fath" accept="image/*" multiple="multiple" />
+					</li>
+					<li class="abm_none child" data-imglink=''>
+						<div class="cur_wrap"></div><i></i>
+						<input type="file" capture="camera" onchange="upalbumal(this)" name="child" accept="image/*" multiple="multiple" />
+					</li>
+				</ul>
+				<div id="card_write_zf" class="card_optwrap">
+					<form action="" method="post">
+						<p>*换头像，转好运</p>
+						<div id="select"><span>选择祝福话语</span>
+							<select name="" id="">
+								<option value="">选择祝福话语</option>
+								<option value="祝你年年都有鱼+羊，天天都是小鲜肉！">祝你年年都有鱼+羊，天天都是小鲜肉！</option>
+								<option value="金玉满堂财源旺，龙腾四海万事兴，鱼翔富贵人欢喜！">金玉满堂财源旺，龙腾四海万事兴，鱼翔富贵人欢喜！</option>
+								<option value="年年有鱼，三羊开泰！鱼跃龙门有好运，羊年贺岁送祝福！ ">年年有鱼，三羊开泰！鱼跃龙门有好运，羊年贺岁送祝福！ </option>
+								<option value="2015祝您承包整个鱼塘，做个安静的美男子，洋洋得意，年年有鱼！">2015祝您承包整个鱼塘，做个安静的美男子，洋洋得意，年年有鱼！</option>
+								<option value="鱼头鱼尾，顺风顺水，鱼腹鱼背，财运相随，祝您年年有鱼！">鱼头鱼尾，顺风顺水，鱼腹鱼背，财运相随，祝您年年有鱼！</option>
+								<option value="新的一年财富有余，精神有余，幸福有余，年年有鱼，如鱼得水！">新的一年财富有余，精神有余，幸福有余，年年有鱼，如鱼得水！</option>
+								<option value="年味，在与家人的陪伴里，在香气四溢的饭菜里，年年有鱼，吉祥如意！">年味，在与家人的陪伴里，在香气四溢的饭菜里，年年有鱼，吉祥如意！</option>
+								<option value="把热腾腾的问候包裹，温暖的真心快递，收件人是你，祝年年有鱼！">把热腾腾的问候包裹，温暖的真心快递，收件人是你，祝年年有鱼！</option>
+								<option value="忙碌了一年，给心放个假，让味蕾放纵，味爱回家，年年有鱼！">忙碌了一年，给心放个假，让味蕾放纵，味爱回家，年年有鱼！</option>
+							</select>
+						</div>
+						<div id="textarea">
+							<textarea placeholder="选择祝福话语或自己整两句..." name="" rows="" cols=""></textarea>
+						</div>
+					</form>
+				</div>
+
+				<div class="card_wrap">
+					<div class="card_detail"><span>祝你年年都有鱼+羊，天天都是小鲜肉！</span>
+					</div>
+				</div>
+
+				<div class="page_btn"><span onclick="page3_make(this)">制作贺卡</span>
+				</div>
+			</div>
+			<!-- 分享后的贺卡 -->
+			<div id="page_card" class="maincnt">
+				<ul class="topic">
+					<li class="gmum">
+					</li>
+					<li class="mum">
+					</li>
+					<li class="gfath">
+					</li>
+					<li class="fath">
+					</li>
+					<li class="child">
+					</li>
+				</ul>
+				<div class="card_wrap">
+					<div class="card_detail"><span>祝你年年都有鱼+羊，天天都是小鲜肉！</span>
+					</div>
+					<a href="javascript:;" onclick="spage('page1')">我也要制作贺卡</a>
+				</div>
+				<p id="pc_jly">© 金龙鱼倾情呈现</p>
+			</div>
+			<div id="rotatetipcon"></div>
+			<div id="wx_share" onclick="$(this).toggle()"></div>
+			<div id="music">
+				<span class="pause" onclick="mplay(this)"></span>
+				<audio src="images/jly.mp3" preload="auto" autoplay="autoplay" loop="loop" id="audio"></audio>
+			</div>
+		</div>
+		<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript" charset="utf-8"></script>
+		<script src="jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+		<script src="hummer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="snow.js" type="text/javascript" charset="utf-8"></script>
+		<script src="main.js" type="text/javascript" charset="utf-8"></script>
+		<script src="script-min.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<style>
+			*{padding: 0;margin: 0;}
+			html{font-size: .87rem}
+			body{font-size: .93rem;}
+			p{font-size: 2rem;}
+			#wrap{position: ;left: 0;top: 0;}
+			#cnt{position: relative;}
+			#a{width:300px; margin:0 auto 0;position: relative;background-color: #aaa;border-radius: 50%;height: 300px;overflow: hidden;border:1px solid transparent;display: none;}
+			#b{width: 600px;left: -150px;background-color: #000; transition: all ease .5s}
+		</style>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script src="lufylegend.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		</script>
+	</head>
+
+	<body>
+	<p>你好忧愁</p>
+		<div id="wrap">
+			<div id="cnt">
+		<div id="a"><div id="b"><img src="images/ablum_bg.png" alt="" /></div></div></div></div>
+		<canvas id="default_img" width="" height="" style="display: ;"></canvas>
+		<button onclick="window.location.reload()">shuaxin</button>
+	</body>
+
+<script type="text/javascript">
+var i,imgw,imgh,curw,curh;
+	//init(1e3/6,'a',640,900,cont);
+	var loader;
+	var img=new Image();
+	
+	window.onload=function(){
+		loader=new LLoader();
+		i=new Image();
+	i.src='images/ablum_bg.png';
+	i.onload=function(){
+		 imgw=i.width;
+		 imgh=i.height;
+		 if(imgw>640){
+		 	curw=640;
+		 	curh=imgh*(imgw/640).toFixed(4);
+		 }else{
+		 	curw=imgw,
+		 	curh=imgh
+		 }
+	var canvas=document.getElementById("default_img");
+	var canvascnt=canvas.getContext('2d');
+	canvas.width=curw;
+	canvas.height=500;
+	
+	
+	//canvascnt.translate(curw/2,curh/2);
+	//canvascnt.scale(0.5,0.5);
+	//canvascnt.rotate(20*Math.PI/180);
+	canvascnt.drawImage(i,0,0,1000,100);
+	var d=canvas.toDataURL();
+	var toimg=new Image();
+	toimg.src=d
+	toimg.onload=function(){
+		var bimg_data=new LBitmapData(toimg,0,0,curw,900);
+			var bimg=new LBitmap(bimg_data)
+			//addChild(bimg);
+	}
+	}
+	}
+</script>
+</html>
